@@ -98,6 +98,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               tileColor: Colors.cyan,
+             hoverColor: Colors.cyan,
              leading: Icon(Icons.add_alarm,color: Colors.white,size: 20,),
              title: Text("alarm",style: TextStyle(fontSize: 30,color: Colors.white),),
               onTap: (){
@@ -108,13 +109,31 @@ class HomeScreen extends StatelessWidget {
         ),
 
       ),
-      //backgroundColor: Colors.green,
-      body: Container(
-        color: Colors.green,
-        padding: EdgeInsets.all(100),
-       margin: EdgeInsets.all(0),
-        child: Text("FirstApp",style: TextStyle(fontSize: 40,color: Colors.white),),
-      ),
+      backgroundColor: Colors.yellow,
+      body: Center(
+        child: Container(
+          height: 300,
+          width: 300,
+          decoration: BoxDecoration(
+            color: Colors.cyan,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: Colors.black, width: 10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.cyanAccent.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: Offset(0,3),
+              )
+            ]
+          ),
+          child: Center(
+            child: Text("Container app",style: TextStyle(fontSize: 40,color: Colors.white70),),
+          ),
+          padding: EdgeInsets.all(20),
+          margin: EdgeInsets.all(30),
+        )
+      )
     );
   }
 }
