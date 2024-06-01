@@ -8,25 +8,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen(),);
-  }
-}
-
-/*void main() {
-  runApp(MyApp());
-}
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
-    );
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),);
   }
-}*/
-
-
+}
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -47,32 +33,31 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.green,
         //centerTitle: true,
         //titleTextStyle: TextStyle(color: Colors.black),
-        //title: Text("hello"),
+        title: Text("hello",style: TextStyle(fontSize: 30,color: Colors.white),),
         actions: [
-          IconButton(
-            onPressed: () {
+          IconButton(onPressed: () {
               MyScanBar("show message Icon", context);
             },
-            icon: Icon(Icons.message),
+            icon: Icon(Icons.message,size: 30,color: Colors.white,),
           ),
           IconButton(
             onPressed: () {
               MyScanBar("show search Icon", context);
             },
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.search,size: 30,color: Colors.white,),
           ),
           IconButton(
             onPressed: () {
               MyScanBar("show setting Icon", context);
             },
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.settings,size: 30,color: Colors.white,),
           )
         ],
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
         backgroundColor: Colors.greenAccent,
-        child: Icon(Icons.add),
+        child: Icon(Icons.add,size: 30,color: Colors.white,),
         onPressed: () {
           MyScanBar("show add Icon", context);
         },
@@ -82,9 +67,9 @@ class HomeScreen extends StatelessWidget {
         currentIndex: 0,
         elevation: 10,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.photo), label: "photo"),
-          BottomNavigationBarItem(icon: Icon(Icons.mail), label: "mail"),
-          BottomNavigationBarItem(icon: Icon(Icons.phone), label: "phone")
+          BottomNavigationBarItem(icon: Icon(Icons.photo,size: 30,color: Colors.white,), label: "photo"),
+          BottomNavigationBarItem(icon: Icon(Icons.mail,size: 30,color: Colors.white,), label: "mail"),
+          BottomNavigationBarItem(icon: Icon(Icons.phone,size: 30,color: Colors.white,), label: "phone")
         ],
         onTap: (int Index) {
           if (Index == 0) {
@@ -113,7 +98,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               tileColor: Colors.cyan,
-             leading: Icon(Icons.add_alarm,color: Colors.white,size: 100,),
+             leading: Icon(Icons.add_alarm,color: Colors.white,size: 20,),
              title: Text("alarm",style: TextStyle(fontSize: 30,color: Colors.white),),
               onTap: (){
                 MyScanBar("Show alarm", context);
@@ -125,10 +110,10 @@ class HomeScreen extends StatelessWidget {
       ),
       //backgroundColor: Colors.green,
       body: Container(
-        color: Colors.cyan,
-        padding: EdgeInsets.all(300),
-        margin: EdgeInsets.all(300),
-        child: Text("FirstApp"),
+        color: Colors.green,
+        padding: EdgeInsets.all(100),
+       margin: EdgeInsets.all(0),
+        child: Text("FirstApp",style: TextStyle(fontSize: 40,color: Colors.white),),
       ),
     );
   }
