@@ -110,7 +110,27 @@ class HomeScreen extends StatelessWidget {
 
       ),
       backgroundColor: Colors.yellow,
-      body: Center(
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            expandedHeight: 200,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text("Sliver AppBar",style: TextStyle(fontSize: 20,color: Colors.orangeAccent),),
+              background: Image.network("https://media.istockphoto.com/id/1431021822/photo/happy-hiker-with-raised-arms-on-top-of-the-mountain.jpg?s=2048x2048&w=is&k=20&c=tz_vtYftz-nWhKzJhXGA80ZCbteDltOApttC_YcwXLs=",fit: BoxFit.cover,),
+            ),
+          ),
+          SliverList(delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index){
+                return ListTile(
+                  title: Text("Item Index",style: TextStyle(decorationColor: Colors.cyan,fontSize: 50,color: Colors.white),),
+                );
+              },
+          childCount: 2
+          ),
+          ),
+        ],
+      )
+      /*Center(
         child: Container(
           height: 300,
           width: 300,
@@ -120,7 +140,7 @@ class HomeScreen extends StatelessWidget {
             border: Border.all(color: Colors.black, width: 10),
             boxShadow: [
               BoxShadow(
-                color: Colors.cyanAccent.withOpacity(0.5),
+                color: Colors.red.withOpacity(0.5),
                 spreadRadius: 5,
                 blurRadius: 7,
                 offset: Offset(0,3),
@@ -128,12 +148,12 @@ class HomeScreen extends StatelessWidget {
             ]
           ),
           child: Center(
-            child: Text("Container app",style: TextStyle(fontSize: 40,color: Colors.white70),),
+            child: Text("Container app",style: TextStyle(fontSize: 30,color: Colors.white70),),
           ),
           padding: EdgeInsets.all(20),
           margin: EdgeInsets.all(30),
         )
-      )
+      )*/
     );
   }
 }
