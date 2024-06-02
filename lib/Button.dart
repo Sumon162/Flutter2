@@ -25,11 +25,32 @@ class HomeSize extends StatelessWidget{
       SnackBar(content: Text(message)),
     );
   }
-  
+
+  MyAlertDailog(context){
+    return showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return Expanded(
+              child: AlertDialog(backgroundColor: Colors.cyan,
+                title: Text("Alart!"),
+                content: Text("Do you want to delete"),
+                actions: [
+                  TextButton(onPressed: (){
+                    MyScanBar("Delete success", context);
+                    Navigator.of(context).pop();
+                    }, child: Text("yes",style:TextStyle(fontSize: 20,color: Colors.white))),
+                  TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text("No",style:TextStyle(fontSize: 20,color: Colors.white)),)
+                ],
+              )
+          );
+        }
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+
+   /* final ButtonStyle buttonStyle=ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         backgroundColor: Colors.deepOrangeAccent,
         foregroundColor: Colors.white70,
@@ -41,7 +62,7 @@ class HomeSize extends StatelessWidget{
           borderRadius: BorderRadius.all(Radius.circular(10))
         )
 
-    );
+    );*/
     
     return Scaffold(
       appBar: AppBar(
@@ -50,14 +71,17 @@ class HomeSize extends StatelessWidget{
 
       ),
       backgroundColor: Colors.blueGrey,
-      body: Row(
+      body: Center(
+        child: ElevatedButton(onPressed: (){MyAlertDailog(context);}, child: Text("Click me",style: TextStyle(fontSize: 20,color: Colors.cyan),)),
+      )
+      /*Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           TextButton(onPressed: (){ MyScanBar("TextButton",context);}, child: Text("TextButton",style: TextStyle(fontSize: 20,color: Colors.white),)),
           ElevatedButton(onPressed: (){ MyScanBar("ElevatedButton",context);}, child: Text("ElevatedButton"),style: buttonStyle,),
           OutlinedButton(onPressed: (){ MyScanBar("OutlinedButton",context);}, child: Text("OutlineButton",style: TextStyle(fontSize: 20,color: Colors.white),))
         ],
-      )
+      )*/
     );
   }
 }
