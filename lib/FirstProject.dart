@@ -104,6 +104,15 @@ class HomeScreen extends StatelessWidget {
               onTap: (){
                 MyScanBar("Show alarm", context);
               },
+            ),
+            ListTile(
+              tileColor: Colors.cyan,
+              hoverColor: Colors.cyan,
+              leading: Icon(Icons.add_call,color: Colors.white,size: 20,),
+              title: Text("call",style: TextStyle(fontSize: 30,color: Colors.white),),
+              onTap: (){
+                MyScanBar("Show call", context);
+              },
             )
           ],
         ),
